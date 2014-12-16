@@ -4,11 +4,11 @@ $config = array(
 	'database'=>array(
         'user'=>'php',
         'password'=>'1234',
-	    'database'=>'usuarios'
+	    'database'=>'timeline'
     ),
     'repository'=>'db',
     'adapter'=>'\Core\Adapters\Mysql',
     'filename'=> 'usuarios.txt',
-    'default_controller'=>'index',
-    'default_action'=>'index'
+    'default_controller'=>'Timeline',
+    'default_action'=>'patch'
 );
