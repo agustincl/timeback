@@ -1,17 +1,29 @@
 <?php
-switch ($request['action'])
+namespace Application\controllers;
+use Application\Mappers\Timeline as TimelineMapper;
+
+use Application\Services;
+
+class Timeline
 {
-    case 'insert':
-        include('../modules/Application/src/Application/views/timeline/insert.phtml');
-    break;
-    case 'update':
-        include('../modules/Application/src/Application/views/timeline/update.phtml');
-    break;
-    default:
-    case 'select':
-        include('../modules/Application/src/Application/views/timeline/select.phtml');
-    break;
-    case 'delete':
-        include('../modules/Application/src/Application/views/timeline/delete.phtml');     
-    break;
+    
+    public $layout = null;
+    
+    
+    public function index()
+    {
+        $service = new Services\Timeline();
+        $data = $service->{strtolower($_SERVER['REQUEST_METHOD'])}($id);
+        
+//         echo "<pre>Data: ";
+//         print_r($data);
+//         echo "<pre>";
+//         echo "kaka";
+//         die;
+        echo json_encode($data);
+        
+    }
+
 }
+
+

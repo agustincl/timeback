@@ -2,45 +2,45 @@
 namespace Application\Services;
 
 
-use Application\Mappers\Users as UserMapper;
+use Application\Mappers\Timeline as TimelineMapper;
 
-class Users
-{
+class Timeline{
+    
     public function get($id=null)
     {
         if(!$id)
         {
-            $mapper = new UserMapper();
-            $users = $mapper->fetchAllUsers();
-            return $users;
+           
         }
         else
             $this->getOne($id);
-        
+    
         die("GET Method not implemented");
     }
     
     private function getOne($id)
     {
-        
+    
     }
     
     public function post($data)
     {
-//         FILA 1
+        //         FILA 1
         die("POST Method not implemented");
     }
     
     public function patch()
     {
-//         FILA 2
+        //         FILA 2
         die("PATCH Method not implemented");
     }
-        
-    public function delete()
+    
+    public function delete($id)
     {
-        FILA 3
-        die("DELETE Method not implemented");
+        $mapper = new TimelineMapper();
+        $timeline = $mapper->delete($id);
+        return $timeline;
+//         die("DELETE Method not implemented");
     }
     
     public function options()
@@ -52,6 +52,4 @@ class Users
     {
         die("PUT Method not implemented");
     }
-    
-    
 }
