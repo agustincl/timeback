@@ -26,7 +26,7 @@ class Timeline
     {
         $mapper = new TimelineMapper();
         $mapper->setId($id);
-        $data = $mapper->fetchTimeline();
+        $data = $mapper->fetchTimeline($id);
         return $data;
     }
     

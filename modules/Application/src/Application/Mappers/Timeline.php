@@ -73,19 +73,26 @@ class Timeline
         }
     }
     
-    public function fetchTimeline()
+    public function fetchTimeline($id)
     {
         switch($this->adapterName){
             case'\Core\Adapters\Mysql':
                 $adapter = new $this->adapterName();
                 $adapter->setTable("timeline");
-                $timeline = $adapter->fetch(array('idTimeline'=> $this->id));
+                $timeline = $adapter->fetch(array('id_timeline'=> $this->id));
                 /**
                  * TODO Falta el idTag con el Title del Media
                  */
-                $userHidrated->hydrate($timeline[$i]);
-                $adapter->disconnect();
-                return $userHidrated->extract();
+                $timelineHidrated = new EntityTimeline();
+                $timelineHidrated->hydrate($timeline[$id]);
+                
+                echo"<pre>";
+                print_r($timelineHidrated->extract());             
+                echo"<pre>";
+                die;
+                
+                return $timelineHidrated->extract();
+                
         }
     }
 

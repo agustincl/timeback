@@ -56,7 +56,7 @@ class Mysql implements AdapterInterface, MysqlInterface
        
         // Retornar el data
         $result = mysqli_query($this->link, $sql);
-        
+        $rows = array();
         while ($row = mysqli_fetch_assoc($result))
         {
             $rows[] = $row;
@@ -71,15 +71,19 @@ class Mysql implements AdapterInterface, MysqlInterface
      */
     public function fetch($id)
     {
-               
         $sql = "SELECT * 
                 FROM ".$this->table." 
                 WHERE ".key($id)."='".$id[key($id)]."'";
-  
         
         // Retornar el data
         $result = mysqli_query($this->link, $sql);
-        //$row = mysqli_fetch_assoc($result);
+        $row = mysqli_fetch_assoc($result);
+        
+//         echo "<pre>row";
+//         print_r($row);
+//         echo "</pre>";
+//         die;
+        
         $rows=array();
         while ($row = mysqli_fetch_assoc($result))
         {
