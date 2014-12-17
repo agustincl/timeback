@@ -82,6 +82,12 @@ class Timeline
                 return $userHidrated->extract();
         }
     }
+<<<<<<< HEAD
+
+    public function updateTimeline()
+    {
+
+=======
     
     /**
      * @param array $data
@@ -102,6 +108,7 @@ class Timeline
     			$adapter->disconnect();
     			return $timeline;
     	}
+>>>>>>> dd76ab8df412560853061c423b655541875279b0
     }
     
     /**
