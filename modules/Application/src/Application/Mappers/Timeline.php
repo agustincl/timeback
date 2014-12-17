@@ -88,6 +88,7 @@ class Timeline
                 return $userHidrated->extract();
         }
     }
+
     
     /**
      * @param array $data
@@ -101,7 +102,7 @@ class Timeline
     			/**
     			 * TODO Relacion entre el nombre de las variables de la entity y el de la tabla
     			 */
-    			$timeline = $adapter->insert(array('idTimeline'=> $this->id));
+    			$timeline = $adapter->insert(array('id_timeline'=> $this->id));
     			/**
     			 * TODO Falta el idTag con el Title del Media
     			 */
@@ -123,7 +124,7 @@ class Timeline
     			/**
     			 * TODO Relacion entre el nombre de las variables de la entity y el de la tabla
     			*/
-    			$timeline = $adapter->delete(array('idTimeline'=> $this->id));
+    			$timeline = $adapter->delete(array('id_timeline'=> $this->id));
     			/**
     			 * TODO Falta el idTag con el Title del Media
     			 */
@@ -145,7 +146,7 @@ class Timeline
     			/**
     			 * TODO Relacion entre el nombre de las variables de la entity y el de la tabla
     			 */
-    			$timeline = $adapter->update(array('idTimeline'=> $this->id),$data);
+    			$timeline = $adapter->update(array('id_timeline'=> $this->id),$data);
     			/**
     			 * TODO Falta el idTag con el Title del Media
     			 */
