@@ -6,6 +6,11 @@ $config = array(
         'password'=>'1234',
 	    'database'=>'timeline'
     ),
+    'gdata'=>array(
+        'user'=>'',
+        'pass'=>'',
+        'service'=>'Zend_Gdata_Docs::AUTH_SERVICE_NAME'  
+    ),
     'repository'=>'db',
     'adapter'=>'\Core\Adapters\Mysql',
     'filename'=> 'usuarios.txt',
