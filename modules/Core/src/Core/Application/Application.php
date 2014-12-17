@@ -41,7 +41,7 @@ class Application
             
             if(method_exists($controllerName, $actionName))
             {
-               $controller -> $actionName(self::$request['param']); 
+               $controller -> $actionName(); 
             } 
             else 
             {
@@ -52,18 +52,16 @@ class Application
         $view = ob_get_contents();
         ob_end_clean();
         
-        echo $view;
-        
-//         self::twoStep($view, $controller->layout);
+        self::twoStep($view, $controller->layout);
     }
     
-//     public static function twoStep($view, $layout)
-//     {
-//         if(isset($layout))
-//             include_once '../Modules/Application/Src/Application/Layouts/'.$layout;
-//         else 
-//             echo $view;
-//     } 
+    public static function twoStep($view, $layout)
+    {
+        if(isset($layout))
+            include_once '../Modules/Application/Src/Application/Layouts/'.$layout;
+        else 
+            echo $view;
+    } 
     
 }
 

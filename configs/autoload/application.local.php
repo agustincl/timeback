@@ -4,7 +4,7 @@ $config = array(
 	'database'=>array(
         'user'=>'php',
         'password'=>'1234',
-	    'database'=>'usuarios'
+	    'database'=>'timeline'
     ),
     'repository'=>'db',
     'adapter'=>'\Core\Adapters\Mysql',
