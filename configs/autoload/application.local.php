@@ -2,7 +2,7 @@
 // Local identities configuration settings on $config variable
 $config = array(
 	'database'=>array(
-        'user'=>'php',
+        'user'=>'root',
         'password'=>'1234',
 	    'database'=>'timeline'
     ),
