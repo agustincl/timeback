@@ -33,7 +33,7 @@ Class Txt implements AdapterInterface, TxtInterface
         $data = file_get_contents($this->filename);
         $data = explode("\n", $data);
         $user = $data[$id];
-        $user = explode("|", $usuario);
+        $user = explode("|", $user);
         return $user;
         break;
     }
