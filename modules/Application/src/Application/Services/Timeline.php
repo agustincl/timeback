@@ -58,8 +58,8 @@ class Timeline
     {
     	$mapper = new TimelineMapper();
     	//FILA 3
-        $mapper->setId($id);
-        $ok = $mapper->deleteTimeline();
+        $ok = $mapper->deleteTimeline($id);
+        return $ok;
         if (!$ok)
         	die("POST Method failure");
     }

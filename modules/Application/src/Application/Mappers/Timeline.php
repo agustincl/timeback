@@ -82,12 +82,7 @@ class Timeline
                 return $userHidrated->extract();
         }
     }
-<<<<<<< HEAD
 
-    public function updateTimeline()
-    {
-
-=======
     
     /**
      * @param array $data
@@ -108,29 +103,28 @@ class Timeline
     			$adapter->disconnect();
     			return $timeline;
     	}
->>>>>>> dd76ab8df412560853061c423b655541875279b0
     }
     
     /**
      * @param none, use before setId()
      * @return unknown
      */
-    public function deleteTimeline()
+    public function deleteTimeline($id)
     {
-    	switch($this->adapterName){
-    		case'\Core\Adapters\Mysql':
-    			$adapter = new $this->adapterName();
-    			$adapter->setTable("timeline");
-    			/**
-    			 * TODO Relacion entre el nombre de las variables de la entity y el de la tabla
-    			*/
-    			$timeline = $adapter->delete(array('idTimeline'=> $this->id));
-    			/**
-    			 * TODO Falta el idTag con el Title del Media
-    			 */
-    			$adapter->disconnect();
-    			return $timeline;
-    	}
+			$adapter = new $this->adapterName();
+			if(method_exists($adapter, 'setTable')){
+			    $adapter->setTable("timeline");
+			}
+			
+			/**
+			 * TODO Relacion entre el nombre de las variables de la entity y el de la tabla
+			*/
+			$timeline = $adapter->delete(array('id_timeline'=> $id));
+			/**
+			 * TODO Falta el idTag con el Title del Media
+			 */
+			$adapter->disconnect();
+			return $timeline;
     }
     
 	/**
