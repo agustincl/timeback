@@ -2,9 +2,9 @@
 // Local identities configuration settings on $config variable
 $config = array(
 	'database'=>array(
-        'user'=>'root',
+        'user'=>'php',
         'password'=>'1234',
-	    'database'=>'timeline'
+	    'database'=>'usuarios'
     ),
     'repository'=>'db',
     'adapter'=>'\Core\Adapters\Mysql',

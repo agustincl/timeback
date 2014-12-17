@@ -27,7 +27,7 @@ class ParseUrl
             if(count($parts) <= 2)
             {
                 $controller = $parts[0];
-                $controller_file = $_SERVER['DOCUMENT_ROOT']."/../Modules/Application/Src/Application/Controllers/$controller.php";
+                $controller_file = $_SERVER['DOCUMENT_ROOT']."/../modules/Application/Src/Application/Controllers/$controller.php";
 
                 if (file_exists($controller_file)) {
                     
