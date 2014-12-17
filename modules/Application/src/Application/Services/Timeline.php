@@ -16,10 +16,10 @@ class Timeline
             $data = $mapper->fetchAllTimeline();
             return $data;
         }        
-        else
-            $this->getOne($id);
-        
-        die("GET Method not implemented");
+        else{
+            $data = $this->getOne($id);
+            return $data;
+        }
     }
     
     private function getOne($id)

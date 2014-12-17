@@ -42,6 +42,8 @@ class Users
 //         print_r($data);
 //         echo "<pre>";
 //         die;
+
+        header('Content-Type: application/json');
         echo json_encode($data);
         
     }
