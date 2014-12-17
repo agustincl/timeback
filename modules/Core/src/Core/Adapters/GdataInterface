@@ -1,0 +1,10 @@
+<?php
+
+namespace Core\Adapters;
+
+interface GdataInterface
+{
+    public function connect();
+    
+    public function disconnect();
+}
