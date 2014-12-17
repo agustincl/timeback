@@ -7,6 +7,11 @@ $config = array(
         'host'=>'localhost',
         'database'=>'cruddb_db'
     ),
+    'gdata'=>array(
+        'user'=>'',
+        'pass'=>'',
+        'service'=>'Zend_Gdata_Docs::AUTH_SERVICE_NAME'  
+    ),
     'repository'=>'db|txt|gd',
     'layout'=>'dashboard',
     'filename'=> 'usuarios.txt',
