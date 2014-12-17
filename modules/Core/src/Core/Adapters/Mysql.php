@@ -1,4 +1,5 @@
 <?php
+
 namespace Core\Adapters;
 use Core\Application\Application;
 
@@ -25,8 +26,7 @@ class Mysql implements AdapterInterface, MysqlInterface
             $config['database']['user'],
             $config['database']['password']);
         
-        mysqli_select_db($this->link, $config['database']['database']);
-        
+        mysqli_select_db($this->link, $config['database']['database']);        
     }
     
     /**
@@ -36,7 +36,7 @@ class Mysql implements AdapterInterface, MysqlInterface
     {
         mysqli_close($this->link);
     }
-
+    
     /**
      * @param field_type $table
      */
@@ -70,8 +70,7 @@ class Mysql implements AdapterInterface, MysqlInterface
      * @return row 
      */
     public function fetch($id)
-    {
-               
+    {               
         $sql = "SELECT * 
                 FROM ".$this->table." 
                 WHERE ".key($id)."='".$id[key($id)]."'";
@@ -86,8 +85,7 @@ class Mysql implements AdapterInterface, MysqlInterface
             $rows[] = $row;
         }
         
-        return $rows;
-        
+        return $rows;       
     }
     
     /**
@@ -95,8 +93,8 @@ class Mysql implements AdapterInterface, MysqlInterface
      * @param array $id
      * @return boolean 
      */
-    public function delete($id) {
-        
+    public function delete($id) 
+    {       
         $sql = "DELETE 
                 FROM ".$this->table." 
                 WHERE ".key($id)."='".$id[key($id)]."'";
@@ -105,13 +103,14 @@ class Mysql implements AdapterInterface, MysqlInterface
         
         return $result;
     }
-
+    
     /**
      * 
      * @param array $data
      * @return boolean 
      */
-    public function insert($data) {
+    public function insert($data) 
+    {
         $sql = "INSERT INTO ".$this->table." SET "; 
                 
         foreach ($data as $value){
@@ -123,15 +122,15 @@ class Mysql implements AdapterInterface, MysqlInterface
         
         return $result;
     }
-
+    
     /**
      * 
      * @param array $id
      * @param array $data
      * @return boolean
      */
-    public function update($id, $data) {
-        
+    public function update($id, $data) 
+    {
         $sql = "UPDATE ".$this->table." SET "; 
                 
         foreach ($data as $value){
@@ -145,6 +144,4 @@ class Mysql implements AdapterInterface, MysqlInterface
         
         return $result;
     }
-
-
 }
