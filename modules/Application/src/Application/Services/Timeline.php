@@ -24,6 +24,7 @@ class Timeline
     
     private function getOne($id)
     {
+        //FILA 1
         $mapper = new TimelineMapper();
         $mapper->setId($id);
         $data = $mapper->fetchTimeline($id);
