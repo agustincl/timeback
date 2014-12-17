@@ -43,6 +43,7 @@ class Users
 //         echo "<pre>";
 //         die;
 
+        header('Content-Type: application/json');
         echo json_encode($data);
         
     }
