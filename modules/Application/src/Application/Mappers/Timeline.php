@@ -55,11 +55,6 @@ class Timeline
         }
         return $adapter->fetch($id);
     }
-    
-    public function insertTimeline()
-    {
-
-    }
 
     public function updateTimeline()
     {

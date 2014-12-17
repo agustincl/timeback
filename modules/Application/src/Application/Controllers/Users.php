@@ -42,6 +42,7 @@ class Users
 //         print_r($data);
 //         echo "<pre>";
 //         die;
+
         echo json_encode($data);
         
     }
