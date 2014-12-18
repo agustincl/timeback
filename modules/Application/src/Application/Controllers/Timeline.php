@@ -14,7 +14,9 @@ class Timeline
     {
         $id = \Core\Application\Application::getRequest()['id'];
         $service = new Services\Timeline();
-        $data = $service->{strtolower($_SERVER['REQUEST_METHOD'])}($id);
+        
+        $data = json_decode((file_get_contents('php://input')), true);
+        $data = $service->{strtolower($_SERVER['REQUEST_METHOD'])}($id, $data);
         
         header('Content-Type: application/json');
         header("Access-Control-Allow-Origin: *");

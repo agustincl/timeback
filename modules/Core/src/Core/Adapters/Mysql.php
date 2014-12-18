@@ -105,12 +105,17 @@ class Mysql implements AdapterInterface, MysqlInterface
      */
     public function insert($data) {
         $sql = "INSERT INTO ".$this->table." SET "; 
-                
-        foreach ($data as $value){
-            $sql .= key($value)." = '".current($data)."',";
-        }
         
+        foreach ($data as $key => $value){
+            $sql .= "$key = '$value',";
+        }
         $sql = rtrim($sql,",");
+        
+//         echo "<pre>sql: ";
+//         print_r($sql);
+//         echo "</pre>";
+//         die;
+
         $result = mysqli_query($this->link, $sql);
         
         return $result;
