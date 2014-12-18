@@ -8,8 +8,9 @@ class Mysql implements AdapterInterface, MysqlInterface
     private $link;
     protected $table;
     
-    public function __construct() 
+    public function __construct($table=null) 
     {
+        $this->table = $table;
         $config = Application::getConfig();
         $this->connect($config);
     }
@@ -134,13 +135,14 @@ class Mysql implements AdapterInterface, MysqlInterface
     public function update($id, $data) 
     {
         $sql = "UPDATE ".$this->table." SET "; 
-                
+         
         foreach ($data as $key => $value){
             $sql .= "$key = '$value',";
         }
         $sql = rtrim($sql,",");
         
         $sql .= " WHERE ".key($id)."='".$id[key($id)]."'";
+        
         $result = mysqli_query($this->link, $sql);
         
         return $result;

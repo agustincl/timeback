@@ -75,8 +75,7 @@ class Timeline
     
     public function fetchTimeline($id)
     {
-        $adapter = new $this->adapterName();
-        $adapter->setTable("timeline");
+        $adapter = new $this->adapterName("timeline");        
         $timeline = $adapter->fetch(array('id_timeline'=> $this->id));
         /**
          * TODO Falta el idTag con el Title del Media
@@ -93,6 +92,9 @@ class Timeline
      */
     public function insertTimeline($data)
     {
+        /**
+         * FIXME This is the future!!!!
+         */
     	switch($this->adapterName){
     		case'\Core\Adapters\Mysql':
     			$adapter = new $this->adapterName();

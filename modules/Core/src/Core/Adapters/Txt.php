@@ -7,9 +7,10 @@ Class Txt implements AdapterInterface, TxtInterface
 {
     private $filename;
     
-    public function __construct() {
+    public function __construct($filename=null) 
+    {
         $config = Application::getConfig();
-        $this->setFilename($_SERVER['DOCUMENT_ROOT']."/".$config['filename']);
+        $this->setFilename($_SERVER['DOCUMENT_ROOT']."/".$filename);
     }
     public function setFilename($filename) 
     {

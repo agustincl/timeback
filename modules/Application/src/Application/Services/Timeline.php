@@ -24,7 +24,6 @@ class Timeline
     
     private function getOne($id)
     {
-        //FILA 1
         $mapper = new TimelineMapper();
         $mapper->setId($id);
         $data = $mapper->fetchTimeline($id);
@@ -33,7 +32,6 @@ class Timeline
     
     public function post($id, $data)
     {
-        //FILA 1
     	$mapper = new TimelineMapper();
      	$mapper->setId($id);
      	
@@ -45,6 +43,7 @@ class Timeline
         
         if (!$ok)
         	die("POST Method failure");
+        return $ok;
     }
     
     /**
@@ -54,21 +53,21 @@ class Timeline
     public function patch($id, $data)
     {
     	$mapper = new TimelineMapper();
-        //FILA 2
         $mapper->setId($id);
         $ok = $mapper->updateTimeline($data);
         if (!$ok)
         	die("POST Method failure");
+        return $ok;
     }
         
     public function delete($id)
     {
     	$mapper = new TimelineMapper();
-    	//FILA 3
         $mapper->setId($id);
         $ok = $mapper->deleteTimeline();
         if (!$ok)
         	die("POST Method failure");
+        return $ok;
     }
     
     public function options()

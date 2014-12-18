@@ -19,6 +19,7 @@ class Timeline
         $data = $service->{strtolower($_SERVER['REQUEST_METHOD'])}($id, $data);
         
         header('Content-Type: application/json');
+        header('Access-Control-Allow-Origin: *');
         echo json_encode($data);        
     }
     
