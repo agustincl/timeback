@@ -24,18 +24,25 @@ class Timeline
     
     private function getOne($id)
     {
+        //FILA 1
         $mapper = new TimelineMapper();
         $mapper->setId($id);
-        $data = $mapper->fetchTimeline();
+        $data = $mapper->fetchTimeline($id);
         return $data;
     }
     
-    public function post($data)
+    public function post($id, $data)
     {
+        //FILA 1
     	$mapper = new TimelineMapper();
-    	//FILA 1
-    	$mapper->setId($id);
-        $ok = $mapper->insertTimeline($data);
+     	$mapper->setId($id);
+     	
+     	$exists = self::getOne($data['id']);
+     	if (empty($exists['id']))
+            $ok = $mapper->insertTimeline($data);
+        else 
+            die("Timeline exists");
+        
         if (!$ok)
         	die("POST Method failure");
     }
