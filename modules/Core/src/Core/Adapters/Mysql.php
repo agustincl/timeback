@@ -133,13 +133,12 @@ class Mysql implements AdapterInterface, MysqlInterface
     {
         $sql = "UPDATE ".$this->table." SET "; 
                 
-        foreach ($data as $value){
-            $sql .= key($value)." = '".current($data)."',";
+        foreach ($data as $key => $value){
+            $sql .= "$key = '$value',";
         }
         $sql = rtrim($sql,",");
         
         $sql .= " WHERE ".key($id)."='".$id[key($id)]."'";
-        
         $result = mysqli_query($this->link, $sql);
         
         return $result;
