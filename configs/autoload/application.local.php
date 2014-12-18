@@ -9,6 +9,6 @@ $config = array(
     'repository'=>'db',
     'adapter'=>'\Core\Adapters\Mysql',
     'filename'=> 'usuarios.txt',
-    'default_controller'=>'Users',
+    'default_controller'=>'Timeline',
     'default_action'=>'index'
 );

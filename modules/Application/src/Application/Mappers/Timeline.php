@@ -109,7 +109,6 @@ class Timeline
     			$adapter->disconnect();
     			return $timeline;
     	}
-
     }
     
     /**

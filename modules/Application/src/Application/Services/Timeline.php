@@ -44,7 +44,7 @@ class Timeline
      * @param unknown_type $id
      * @param array $data
      */
-    public function patch($id,$data)
+    public function patch($id, $data)
     {
     	$mapper = new TimelineMapper();
         //FILA 2
